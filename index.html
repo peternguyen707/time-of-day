@@ -59,22 +59,23 @@
 		<h1 class="masthead">Time of Day</h1>
 	</header>
     <main>
-	 <header><h3>An IT121 Assignment by Peter Nguyen</h3></header>
+	 <header><h3>An IT 116 Assignment by Peter Nguyen</h3></header>
+	 <h2 id="greeting">Greeting Goes Here</h2>
 	 <p>This web page uses JavaScript to determine the current hour,
-		 and presents a different image, custom message, and color based on each
-		 of the following times of day:</p>
+		  and presents a different image, custom message, and color 
+		  based on each of the following times of day:</p>
 	<p>
 		<ul>
 			<li>Morning (5am to 12 noon)</li>
 			<li>Afternoon (12 noon to 6pm)</li>
 			<li>Evening (6pm to 11pm)</li>
 			<li>Night (11pm to 5am)</li>
-		</ul>		
-	</p>
+		</ul>
+	</p>	  
 	  <img id="pic" src="http://dummyimage.com/300x400" alt="time of day pic" class="flexible" />
      </main>
     <footer>
-      <small>&copy; 2020 - <span id="copyright">copyright goes here</span> All Rights Reserved ~
+      <small>&copy; 2020 - <span id="copyright">copyright goes here</span>, All Rights Reserved ~
       <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
       <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
       </small>
@@ -83,7 +84,7 @@
 		//we're using the Date() object
 		let myDate = new Date();
 
-		//we're using hours to determine the time of day
+		//we're using hours to determine the time of day 0-23
 		let myHours = myDate.getHours();
 
 		//declare variables we'll use in advance
@@ -92,18 +93,17 @@
 		let myPic = '';
 
 
-
 		//REMOVE THE LINE BELOW - FOR TESTING ONLY
-		myHours = 13;
+		//myHours = 13;
 
 		if(myHours < 12){
 			//alert('good morning!');
 			myText = "Good Morning!";
-			myColor = 'orange';	
-			myPic= "images/morning.jpg"
+			myColor = "orange";
+			myPic = "images/morning.jpg";
 		}else{
 			myText = "Good Afternoon!";
-			myColor = 'blue';
+			myColor = "green";
 			myPic = "images/afternoon.jpg";
 		}
 
@@ -112,21 +112,18 @@
 		//load greeting to page
 		document.getElementById('greeting').innerHTML = myText;
 
-
 		//change color of greeting text
 		document.getElementById('greeting').style.color = myColor;
 
 		//change color of html element to match greeting
 		document.querySelector("html").style.backgroundColor = myColor;
-
+		
 		//change pic
 		document.getElementById('pic').src = myPic;
-
-
-
+	
 		//we'll use this to create a dynamic copyright
 		let myCopyright = myDate.getFullYear();
-		
+
 
 		//load copyright info into a span on the page
 		document.getElementById('copyright').innerHTML = myCopyright;
